@@ -61,6 +61,15 @@ Total Score:    100.00%
 
 The output of this command is **identical to what is visible on Gradescope pre-due date**, and they are the same cases that display on every submission. If there is a discrepancy, please let the teaching team know!
 
+You may also specify a source file to the tester. This will run only the source file and not the rest of the tester. With this, you would manually specify input and would see the output in stdout.
+
+```sh
+$ python3 tester.py 1 v1/tests/test_add1.br
+15
+```
+
+*Of course, you may specify any source file, not just ones we provide!*
+
 Note: we also output the results of the terminal output to `results.json`.
 
 ## Bug Bounty

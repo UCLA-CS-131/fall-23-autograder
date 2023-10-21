@@ -141,6 +141,18 @@ def generate_test_suite_v1():
         fails,
     )
 
+def run_single_file(interpreterlib, srcfile):
+    """runs the interpreter on a single srcfile (instead of the entire test suite)"""
+
+    # creates an interpreter (with the ability to print to stdout)
+    interpreter = interpreterlib.Interpreter()
+    
+    # read the file (if file not found, just send the error /shrug)
+    with open(srcfile, 'r', encoding='utf-8') as handle:
+        prog_lines = handle.readlines()
+
+    program = "\n".join(prog_lines)
+    interpreter.run(program)
 
 async def main():
     """main entrypoint: argparses, delegates to test scaffold, suite generator, gradescope output"""
@@ -149,6 +161,18 @@ async def main():
     version = sys.argv[1]
     module_name = f"interpreterv{version}"
     interpreter = importlib.import_module(module_name)
+
+    # check if a file was specified
+    try:
+        srcfile = sys.argv[2]
+    except IndexError:
+        srcfile = None
+
+    if srcfile is not None:
+        run_single_file(interpreter, srcfile) 
+
+        # don't run the rest of the suite if a file is specified, just run the file
+        return
 
     scaffold = TestScaffold(interpreter)
 
