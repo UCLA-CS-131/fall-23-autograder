@@ -1,0 +1,18 @@
+func main() {
+  person1 = @;
+  person1.x = lambda() {print("this is a function");};
+
+  person2 = @;
+  person2.x = 10;
+  person2.proto = person1;
+
+  person2.x(); /* x is not a function in person2 */
+
+  
+}
+
+/*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/

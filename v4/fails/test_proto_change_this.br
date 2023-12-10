@@ -1,0 +1,13 @@
+func main() {
+  obj = @;
+  obj.x = 5;
+  obj.changeSelf = lambda() { this = @; };  /* Invalid assignment to 'this' */
+  obj.changeSelf();
+  print(obj.x);
+}
+
+/*
+*OUT*
+ErrorType.NAME_ERROR
+*OUT*
+*/

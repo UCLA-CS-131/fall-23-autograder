@@ -1,0 +1,12 @@
+func main() {
+  g = @;
+  f = @;
+  f.proto = g;
+  f.foo();
+}
+
+/*
+*OUT*
+ErrorType.NAME_ERROR
+*OUT*
+*/
