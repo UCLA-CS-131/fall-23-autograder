@@ -1,0 +1,21 @@
+func main() {
+ o1 = @;
+ o1.f = lambda() { bar = 10; print(foo, bar); this.g(); print(foo, bar); };
+
+ o2 = @;
+ o2.g = lambda() { foo = foo + 1; bar = bar + 1; print(foo, bar); };
+ o2.proto = o1;
+
+ foo = 5;
+ o2.f(); 
+ print(foo);
+}
+
+/*
+*OUT*
+510
+611
+611
+6
+*OUT*
+*/

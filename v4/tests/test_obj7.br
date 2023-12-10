@@ -1,0 +1,30 @@
+
+func add_node(val, next) {
+  node = @;
+  node.val = val; 
+  node.next = next;
+  return node;
+}
+
+func print_nodes(head) {
+  while (head != nil) { 
+    print(head.val);
+    head = head.next;
+  }
+}
+
+
+func main() {
+  head = add_node(10, nil);
+  head = add_node(20, head);
+  head = add_node(30, head);
+  print_nodes(head);
+}
+
+/*
+*OUT*
+30
+20
+10
+*OUT*
+*/

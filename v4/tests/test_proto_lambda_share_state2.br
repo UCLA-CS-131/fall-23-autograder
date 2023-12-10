@@ -1,0 +1,15 @@
+func main() {
+  base = @;
+  base.count = 0;
+  base.increment = lambda() { this.count = this.count + 1; };
+  derived = @;
+  derived.proto = base;
+  derived.run = lambda() { this.increment(); this.increment(); print(this.count); };
+  derived.run();  /* Should increment count in base twice */
+}
+
+/*
+*OUT*
+2
+*OUT*
+*/

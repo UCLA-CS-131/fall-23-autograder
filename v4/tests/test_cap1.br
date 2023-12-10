@@ -1,0 +1,14 @@
+func main() {
+ f = lambda() { print(1); };
+
+ /* d captures object c by object reference */ 
+ d = lambda() { f = lambda() { print(2); }; };
+
+ d();
+ f();
+}
+/*
+*OUT*
+2
+*OUT*
+*/

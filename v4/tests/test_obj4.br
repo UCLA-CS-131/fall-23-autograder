@@ -1,0 +1,14 @@
+func main() {
+  a = @;
+  a.x = 10;
+  a.f = lambda() { this.g = lambda() { print(this.x); }; };
+  a.f();
+  a.x = 20;
+  a.g();
+}
+
+/*
+*OUT*
+20
+*OUT*
+*/

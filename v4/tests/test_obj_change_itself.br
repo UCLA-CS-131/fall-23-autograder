@@ -1,0 +1,13 @@
+func main() {
+  person1 = @;
+  person1.set_x = lambda (x) {this.x = x;};
+
+  person1.set_x(100);
+  print(person1.x);
+}
+
+/*
+*OUT*
+100
+*OUT*
+*/

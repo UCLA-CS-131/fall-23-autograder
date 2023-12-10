@@ -1,0 +1,21 @@
+func foo(ref x) {
+	if (x.a > 10) {
+		x.a = x.a - 1;
+		return foo(x);
+	} else {
+		return x;
+	}
+}
+
+func main() {
+ x = @;
+ x.a = 14;
+ result = foo(x);
+ if (result == x) {print("same obj");} else {print("different obj");}
+}
+
+/*
+*OUT*
+different obj
+*OUT*
+*/

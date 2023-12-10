@@ -1,0 +1,23 @@
+func main() {
+ x = @;
+ y = @;
+ z = @;
+ x.obj = y;
+ x.val = 10;
+ x.f = lambda() { print(this.val); obj = this.obj; obj.f(); print(this.val); };
+ y.obj = z;
+ y.val = 20;
+ y.f = lambda() { print(this.val); obj2 = this.obj; obj2.f(); print(this.val); };
+ z.val = 30;
+ z.f = lambda() { print(this.val); };
+ x.f();
+}
+/*
+*OUT*
+10
+20
+30
+20
+10
+*OUT*
+*/

@@ -1,0 +1,19 @@
+func main() {
+  a = @;
+  b = 10;
+  g = lambda() { b = b + 1; print(b); };
+  a.f = lambda() { g(); };
+  g();
+  a.f();
+  g();
+  print(b);
+}
+
+/*
+*OUT*
+11
+12
+13
+10
+*OUT*
+*/

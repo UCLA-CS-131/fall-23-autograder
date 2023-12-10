@@ -1,0 +1,13 @@
+func main() {
+  person1 = @;
+  person1.f = lambda(x) {if (x <= 0) {return 0;} else {print(x); return this.f(x - 1);}};
+  person1.f(3);
+}
+
+/*
+*OUT*
+3
+2
+1
+*OUT*
+*/

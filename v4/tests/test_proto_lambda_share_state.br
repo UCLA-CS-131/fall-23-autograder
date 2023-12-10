@@ -1,0 +1,13 @@
+func main() {
+  obj = @;
+  obj.count = 0;
+  obj.increment = lambda() { this.count = this.count + 1; };
+  obj.nestedCall = lambda() { this.increment(); this.increment(); print(this.count); };
+  obj.nestedCall();  /* Should increment count twice and print it */
+}
+
+/*
+*OUT*
+2
+*OUT*
+*/

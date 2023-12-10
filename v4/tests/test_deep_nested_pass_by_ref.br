@@ -1,0 +1,27 @@
+func foo(ref x) {
+	if (x.a > 10) {
+		x.a = x.a - 1;
+		print(x.a);
+		foo(x);
+	} else {
+		print("reached the end!!!");
+	}
+}
+
+func main() {
+ x = @;
+ x.a = 14;
+ foo(x);
+ print(x.a);
+}
+
+/*
+*OUT*
+13
+12
+11
+10
+reached the end!!!
+10
+*OUT*
+*/

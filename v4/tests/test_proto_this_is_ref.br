@@ -1,0 +1,13 @@
+func main() {
+ o1 = @;
+ 
+ o1.test_self = lambda(ref x){if (x == this) {print("myself");} else {print("what?");}};
+  /*test reference is itself*/
+ o1.test_self(o1);
+}
+
+/*
+*OUT*
+myself
+*OUT*
+*/

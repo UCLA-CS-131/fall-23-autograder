@@ -1,0 +1,21 @@
+func main() {
+ o1 = @;
+ o1.x = 10;
+ 
+ o1.change_self = lambda(){this.x = 100;};
+ 
+ o2 = @;
+ o2.proto = o1;
+ o2.change_self();
+ 
+ print(o1.x);
+ print(o2.x);
+
+}
+
+/*
+*OUT*
+10
+100
+*OUT*
+*/

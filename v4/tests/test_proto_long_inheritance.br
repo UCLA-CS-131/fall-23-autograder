@@ -1,0 +1,26 @@
+func main() {
+  person1 = @;
+  person1.x = 10;
+  person2 = @;
+  person2.y = 20;
+  person3 = @;
+  person3.z = 30;
+  person4 = @;
+  person4.z = 40;
+
+  person4.proto = person3;
+  person3.proto = person2;
+  person2.proto = person1;
+
+  print(person4.x);
+  print(person4.y);
+  print(person4.z);
+}
+
+/*
+*OUT*
+10
+20
+40
+*OUT*
+*/

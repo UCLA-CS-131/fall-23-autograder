@@ -1,0 +1,20 @@
+func main() {
+ x = @;
+ x.set = lambda(x) { this.val = x; };
+ x.f = lambda() { this.myself = this; };
+ x.g = lambda() { me = this.myself; print(me.val); print(this.val); me.set(5); print(me.val); print(this.val); };
+ 
+ x.f();
+ x.set(10);
+ x.g();
+ print(x.val);
+}
+/*
+*OUT*
+10
+10
+5
+5
+5
+*OUT*
+*/

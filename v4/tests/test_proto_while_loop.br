@@ -1,0 +1,21 @@
+func main() {
+  person1 = @;
+  person1.x = 3;
+  person1.y = 666;
+  prev_person = person1;
+  while (person1.x > 0) {
+    prev_person = person1;
+    person1 = @;
+    person1.proto = prev_person;
+    person1.x = prev_person.x - 1;
+  }
+  print(person1.x);
+  print(person1.y);
+}
+
+/*
+*OUT*
+0
+666
+*OUT*
+*/

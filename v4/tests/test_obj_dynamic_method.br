@@ -1,0 +1,14 @@
+func main() {
+  a = @;
+  a.createMethod = lambda() {
+    this.run = lambda() { print("Dynamic Method"); };
+  };
+  a.createMethod();
+  a.run();  /* Run the dynamically created method */
+}
+
+/*
+*OUT*
+Dynamic Method
+*OUT*
+*/

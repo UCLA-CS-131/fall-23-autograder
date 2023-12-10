@@ -1,0 +1,21 @@
+func foo(ref x) {
+ x.a = 5;
+ bar(x);
+}
+
+func bar(ref x) {
+	x.a = 6;
+}
+
+func main() {
+ x = @;
+ x.a = 10;
+ foo(x);
+ print(x.a);
+}
+
+/*
+*OUT*
+6
+*OUT*
+*/

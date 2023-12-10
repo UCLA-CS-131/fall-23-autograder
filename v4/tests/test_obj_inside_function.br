@@ -1,0 +1,17 @@
+func main() {
+  person1 = @;
+  person2 = @;
+  person2.age = 18;
+  /* testing creating new object in member function and override member value*/
+  person1.f = lambda(x) {person2 = @; person2.age = x;};
+  print(person2.age);
+  person1.f(10);
+  print(person2.age);
+}
+
+/*
+*OUT*
+18
+10
+*OUT*
+*/

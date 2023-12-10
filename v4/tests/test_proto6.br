@@ -1,0 +1,24 @@
+func main() {
+ o1 = @;
+ o1.x = 10;
+ o1.set = lambda(obj) { this.obj = obj; };
+ o1.g = lambda() { 
+   obj = this.obj;
+   obj.h();
+   print(this.x);
+ };
+
+ o2 = @;
+ o2.x = 20;
+ o2.h = lambda() { print(this.x); };
+
+ o1.set(o2);
+ o1.g();
+}
+
+/*
+*OUT*
+20
+10
+*OUT*
+*/

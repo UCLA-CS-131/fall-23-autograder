@@ -1,0 +1,18 @@
+func main() {
+  person1 = @;
+  /* test dynamic scoping in object member functions.*/
+  person1.f = lambda() {x = 10; print(x); this.g();};
+  person1.g = lambda() {y = 20; print(x); x = x+1; this.h();};
+  person1.h = lambda() {z = 30; print(x, y); print(z);};
+
+  person1.f();
+}
+
+/*
+*OUT*
+10
+10
+1120
+30
+*OUT*
+*/

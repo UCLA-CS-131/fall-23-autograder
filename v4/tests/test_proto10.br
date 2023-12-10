@@ -1,0 +1,23 @@
+
+func main() {
+ o1 = @;
+ o1.x = 10;
+ o1.f = lambda() { return this.x; };
+ o2 = @;
+ o3 = @;
+ o2.proto = o1;
+ o3.proto = o2;
+ o2.x = 20; 
+ print(o2.x);
+ o1.x = 15;
+ print(o2.x);
+ print(o3.f());
+}
+
+/*
+*OUT*
+20
+20
+20
+*OUT*
+*/

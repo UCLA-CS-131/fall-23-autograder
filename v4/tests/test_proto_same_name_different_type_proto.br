@@ -1,0 +1,17 @@
+func main() {
+  person1 = @;
+  person1.x = lambda() {print("this is a function");};
+
+  person2 = @;
+  person2.x = 10;
+  person2.proto = person1;
+
+  person1.x();
+  
+}
+
+/*
+*OUT*
+this is a function
+*OUT*
+*/
